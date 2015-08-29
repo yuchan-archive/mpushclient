@@ -14,6 +14,7 @@
 		705B5F5B1B91A91C008BBD61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 705B5F591B91A91C008BBD61 /* LaunchScreen.storyboard */; };
 		705B5F661B91A91C008BBD61 /* mpushclientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705B5F651B91A91C008BBD61 /* mpushclientTests.swift */; };
 		705B5F711B91A91C008BBD61 /* mpushclientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705B5F701B91A91C008BBD61 /* mpushclientUITests.swift */; };
+		70BF091A1B91B06600661279 /* HBOLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF09191B91B06600661279 /* HBOLogger.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		705B5F6C1B91A91C008BBD61 /* mpushclientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpushclientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		705B5F701B91A91C008BBD61 /* mpushclientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpushclientUITests.swift; sourceTree = "<group>"; };
 		705B5F721B91A91C008BBD61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70BF09191B91B06600661279 /* HBOLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBOLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				705B5F501B91A91C008BBD61 /* AppDelegate.swift */,
 				705B5F521B91A91C008BBD61 /* ViewController.swift */,
+				70BF09191B91B06600661279 /* HBOLogger.swift */,
 				705B5F541B91A91C008BBD61 /* Main.storyboard */,
 				705B5F571B91A91C008BBD61 /* Assets.xcassets */,
 				705B5F591B91A91C008BBD61 /* LaunchScreen.storyboard */,
@@ -192,6 +195,7 @@
 				TargetAttributes = {
 					705B5F4C1B91A91C008BBD61 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = KHFXF6N2QE;
 					};
 					705B5F601B91A91C008BBD61 = {
 						CreatedOnToolsVersion = 7.0;
@@ -257,6 +261,7 @@
 			files = (
 				705B5F531B91A91C008BBD61 /* ViewController.swift in Sources */,
 				705B5F511B91A91C008BBD61 /* AppDelegate.swift in Sources */,
+				70BF091A1B91B06600661279 /* HBOLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -386,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,10 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YUSUKE OHASHI (RG6B2ZEZH5)";
 				INFOPLIST_FILE = mpushclient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.mpushclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0ddc4911-6afe-4ec8-a44a-0d8799fe270b";
 			};
 			name = Debug;
 		};
@@ -409,10 +416,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: YUSUKE OHASHI (RG6B2ZEZH5)";
 				INFOPLIST_FILE = mpushclient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.mpushclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0ddc4911-6afe-4ec8-a44a-0d8799fe270b";
 			};
 			name = Release;
 		};
@@ -483,6 +492,7 @@
 				705B5F771B91A91C008BBD61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		705B5F781B91A91C008BBD61 /* Build configuration list for PBXNativeTarget "mpushclientTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +501,7 @@
 				705B5F7A1B91A91C008BBD61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		705B5F7B1B91A91C008BBD61 /* Build configuration list for PBXNativeTarget "mpushclientUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +510,7 @@
 				705B5F7D1B91A91C008BBD61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
