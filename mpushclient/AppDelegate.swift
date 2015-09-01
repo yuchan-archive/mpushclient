@@ -8,11 +8,13 @@
 
 import UIKit
 
+let MPushNotificationDidReceiveAPNS:String = "MPushNotiifcationDidReceiveAPNS"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var remoteNotificationInfo: NSDictionary?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mySettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
         application.registerForRemoteNotifications()
+        
+        if let options = launchOptions {
+            if options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil {
+                let info:NSDictionary = options[UIApplicationLaunchOptionsRemoteNotificationKey] as! NSDictionary
+                self.remoteNotificationInfo = info
+            }
+        }
         return true
     }
     
@@ -39,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if (self.remoteNotificationInfo != nil) {
+            NSNotificationCenter.defaultCenter().postNotificationName(MPushNotificationDidReceiveAPNS, object: self.remoteNotificationInfo)
+            self.remoteNotificationInfo = nil
+        }
     }
     
     func applicationWillTerminate(application: UIApplication) {
@@ -46,7 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("\(userInfo)")
+        NSNotificationCenter.defaultCenter().postNotificationName(MPushNotificationDidReceiveAPNS, object: userInfo)
+        HBOLogger.Debug("\(userInfo)")
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
